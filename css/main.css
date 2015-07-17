@@ -1,0 +1,60 @@
+main {
+  width: 100%; }
+
+.aside {
+  width: 18%;
+  margin-left: 14em;
+  float: left;
+  border-bottom: 1px solid #DDDDDD;
+  font-family: sans-serif; }
+  .aside .name h3 {
+    font-size: 24px;
+    margin: 0; }
+  .aside .name p {
+    margin-top: 0;
+    color: #66656F; }
+  .aside .image img {
+    width: 220px;
+    border-radius: 5%; }
+  .aside .name {
+    border-bottom: 1px solid #DDDDDD; }
+  .aside .info {
+    border-bottom: 1px solid #DDDDDD;
+    margin-top: 1em; }
+    .aside .info p {
+      padding-right: 1em; }
+  .aside .counter {
+    width: auto; }
+    .aside .counter li {
+      display: inline-block;
+      float: left;
+      padding-right: 2.5em;
+      margin-left: 2em; }
+
+.repos {
+  float: right;
+  padding-left: 15px;
+  width: 48%;
+  margin-right: 14em;
+  position: relative;
+  top: 6em;
+  color: #888888;
+  font-family: sans-serif; }
+  .repos h3 {
+    border-top: 1px solid #DDDDDD;
+    padding: 19px 0 0 0; }
+    .repos h3 a {
+      text-decoration: none;
+      color: #4078C0;
+      font-size: 24px; }
+      .repos h3 a:hover {
+        text-decoration: underline; }
+  .repos p {
+    font-size: 12px; }
+    .repos p a {
+      float: right;
+      position: relative;
+      bottom: 4em;
+      padding-right: .5em;
+      text-decoration: none;
+      color: #888888; }
