@@ -3,15 +3,14 @@ var $name = $('.name');
 var $info = $('.info');
 var $counter = $('.counter');
 var $image = $('.image');
+var $header = $('header');
 var url ='https://api.github.com/users/awilli1186';
 var urlRepo ='https://api.github.com/users/awilli1186/repos';
 
-var access_token = "d9f4d50efb410c28df02b867a22d86dfba7e77f4"
+
 $.ajax(url, {
   method:"GET",
-  data: {
-     access_token: access_token
-   },
+  
   error: function(){
     $aside.text("Oooops! " + error);
   },
@@ -19,7 +18,9 @@ $.ajax(url, {
     var profile = data;
     var avatar = profile.avatar_url;
 
-    //add our github avatar
+    $img = $('<img>').attr('src', avatar);
+    $header.append($img);
+
     $img = $('<img>').attr('src', avatar);
     $image.append($img);
 
@@ -35,25 +36,26 @@ $.ajax(url, {
 
     $info.append('<p>' + '<span class="octicon octicon-clock"></span>' + 'Joined ' + moment(profile.created_at).fromNow() + '</p>');
 
-    $p = $('<li>').text(profile.followers);
+    $p = $('<li class="numbers">').text(profile.followers);
     $counter.append($p);
 
-    $p = $('<li>').text(0);
+    $p = $('<li class="numbers">').text(0);
     $counter.append($p);
 
-    $p = $('<li>').text(profile.following);
+    $p = $('<li class="numbers">').text(profile.following);
     $counter.append($p);
+
+    $counter.append('<li class="titles"><a href="'+ profile.followers_url +'">' + "Followers" + '</li>');
+    $counter.append('<li class="titles"><a href="'+ profile.starred_url +'">' + "Starred" + '</li>');
+    $counter.append('<li class="titles"><a href="'+ profile.followers_url +'">' + "Following" + '</li>');
+
 
     console.log(profile);
   }
 });
 
-var access_token = "d9f4d50efb410c28df02b867a22d86dfba7e77f4"
 $.ajax(urlRepo, {
   method:"GET",
-  data: {
-     access_token: access_token
-   },
   error: function(){
     $aside.text("Oooops! " + error);
   },
@@ -62,8 +64,9 @@ $.ajax(urlRepo, {
     repos.forEach(function(repo){
       $repos.append('<h3><a href="'+ repo.html_url +'">' + repo.name + '</a></h3>');
       $repos.append('<p>' +  moment(repo.updated_at).fromNow() + '</p>');
-      $repos.append('<p><a href="'+ repo.forks_url +'">' + '<span class="octicon octicon-git-branch"></span>' + repo.forks + '</p>');
-      $repos.append('<p><a href="'+ repo.stargazers_url +'">' + '<span class="octicon octicon-star"></span>' + repo.stargazers_count + '</p>');
+      $repos.append('<p class="lang"><a href="'+ repo.forks_url +'">' + '<span class="octicon octicon-git-branch"></span>' + repo.forks + '</p>');
+      $repos.append('<p class="lang"><a href="'+ repo.stargazers_url +'">' + '<span class="octicon octicon-star"></span>' + repo.stargazers_count + '</p>');
+      $repos.append('<p class="lang">' + repo.language + '</p>');
 
     });
 }
