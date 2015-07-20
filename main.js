@@ -4,13 +4,14 @@ var $info = $('.info');
 var $counter = $('.counter');
 var $image = $('.image');
 var $header = $('header');
+var $buttons = $('.buttons');
 var url ='https://api.github.com/users/awilli1186';
 var urlRepo ='https://api.github.com/users/awilli1186/repos';
 
 
 $.ajax(url, {
   method:"GET",
-  
+
   error: function(){
     $aside.text("Oooops! " + error);
   },
@@ -18,8 +19,7 @@ $.ajax(url, {
     var profile = data;
     var avatar = profile.avatar_url;
 
-    $img = $('<img>').attr('src', avatar);
-    $header.append($img);
+    $buttons.append('<img src="' + profile.avatar_url +'">' + '<span class="octicon octicon-triangle-down"></span>');
 
     $img = $('<img>').attr('src', avatar);
     $image.append($img);
