@@ -126,27 +126,25 @@ main {
     }
   }
   .counter {
-    width:100%;
+    width:auto;
     color: #4078C0;
     font-size: 24px;
     margin: 0;
-    padding: .5em 0 0 0;
+    padding: .5em 0;
     .numbers {
-    display: inline-block;
-    float:left;
+    display: inline;
+    float: left;
     padding-right: 1em;
     margin-left: 1.6em;
   }
     .titles {
-      display: inline-block;
-      float: left;
-      padding-bottom: .5em;
+      display: inline;
       a{
         text-decoration: none;
         color:#888888;
-        font-size: 12px;
+        font-size: 10px;
         padding-right: 2em;
-        margin:0 0 0 1em;
+        margin:0 0 0 2em;
       }
     }
   }
