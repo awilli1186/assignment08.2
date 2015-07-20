@@ -1,6 +1,8 @@
 body {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  width:100%;
 }
 
 header {
@@ -29,19 +31,21 @@ header {
   }
   .buttons {
     position: relative;
-    left:61em;
+    left:67%;
     bottom: 4em;
-    a {
-      padding-right: 5px;
-    }
-  }
     img {
     width: 25px;
     border-radius: 5%;
     position: relative;
-    left:73em;
-    bottom: 6em;
+    left: 8em;
+    top: 0.3em;
+    padding-right: 8px;
+
   }
+    a {
+      padding-right: 5px;
+    }
+}
 
   input {
     position: relative;
@@ -76,7 +80,7 @@ header {
 
 
 main {
-  width: 100%;
+  width: auto;
 }
 .aside {
   width:18%;
@@ -122,7 +126,7 @@ main {
     }
   }
   .counter {
-    width:auto;
+    width:100%;
     color: #4078C0;
     font-size: 24px;
     margin: 0;
@@ -149,7 +153,7 @@ main {
 }
 
 .repos {
-  float: right;
+  float: left;
   padding-left: 15px;
   width:48%;
   margin-right: 14em;

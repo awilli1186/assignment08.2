@@ -1,6 +1,8 @@
 body {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%; }
 
 header {
   background-color: #F5F5F5;
@@ -20,16 +22,17 @@ header {
       color: #4078C0; }
   header .buttons {
     position: relative;
-    left: 61em;
+    left: 67%;
     bottom: 4em; }
+    header .buttons img {
+      width: 25px;
+      border-radius: 5%;
+      position: relative;
+      left: 8em;
+      top: 0.3em;
+      padding-right: 8px; }
     header .buttons a {
       padding-right: 5px; }
-  header img {
-    width: 25px;
-    border-radius: 5%;
-    position: relative;
-    left: 73em;
-    bottom: 6em; }
   header input {
     position: relative;
     left: 7.5em;
@@ -55,7 +58,7 @@ header {
           color: #4078C0; }
 
 main {
-  width: 100%; }
+  width: auto; }
 
 .aside {
   width: 18%;
@@ -86,7 +89,7 @@ main {
       .aside .info a:hover {
         text-decoration: underline; }
   .aside .counter {
-    width: auto;
+    width: 100%;
     color: #4078C0;
     font-size: 24px;
     margin: 0;
@@ -108,7 +111,7 @@ main {
         margin: 0 0 0 1em; }
 
 .repos {
-  float: right;
+  float: left;
   padding-left: 15px;
   width: 48%;
   margin-right: 14em;
