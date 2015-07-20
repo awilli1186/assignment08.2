@@ -36,14 +36,10 @@ $.ajax(url, {
 
     $info.append('<p>' + '<span class="octicon octicon-clock"></span>' + 'Joined ' + moment(profile.created_at).fromNow() + '</p>');
 
-    $p = $('<li class="numbers">').text(profile.followers);
-    $counter.append($p);
 
-    $p = $('<li class="numbers">').text(0);
-    $counter.append($p);
-
-    $p = $('<li class="numbers">').text(profile.following);
-    $counter.append($p);
+    $counter.append('<li class="numbers">' + profile.followers + '</li>');
+    $counter.append('<li class="numbers">' + '0' + '</li>');
+    $counter.append('<li class="numbers">' + profile.following + '</li>');
 
     $counter.append('<li class="titles"><a href="'+ profile.followers_url +'">' + "Followers" + '</li>');
     $counter.append('<li class="titles"><a href="'+ profile.starred_url +'">' + "Starred" + '</li>');
